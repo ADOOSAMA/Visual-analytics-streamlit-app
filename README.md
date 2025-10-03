@@ -36,22 +36,29 @@ VisA provides an intuitive interface for training machine learning models, compa
 
 ```
 visa/
-├── app/
-│   ├── __init__.py                 # App module initialization
-│   ├── app.py                     # Main Streamlit application
-│   ├── config.py                  # Configuration settings
-│   ├── requirements.txt           # Python dependencies
-│   ├── test_app.py               # Unit tests
-│   ├── lucas_organic_carbon/     # Lucas dataset files
-│   │   ├── target/               # Target data files
-│   │   └── training_test/        # Training and test data
-│   └── services/                 # Core functionality modules
+├── app/                          # Main application directory
+│   ├── __init__.py              # App module initialization
+│   ├── app.py                   # Main Streamlit application
+│   ├── config.py                # Configuration settings
+│   ├── requirements.txt         # Python dependencies
+│   ├── test_app.py              # Unit tests
+│   ├── lucas_organic_carbon/    # Lucas dataset files
+│   │   ├── target/              # Target data files
+│   │   │   └── lucas_organic_carbon_target.csv
+│   │   └── training_test/       # Training and test data
+│   │       ├── autoencoder_predictions.csv
+│   │       └── compressed_data.csv
+│   └── services/                # Core functionality modules
+│       ├── __init__.py          # Services module initialization
 │       ├── data.py              # Data loading and preparation
 │       ├── model.py             # Model training and evaluation
 │       ├── error_analysis.py    # Error analysis visualizations
 │       └── feature_importance.py # Feature importance analysis
-├── .streamlit/                   # Streamlit configuration
-├── .github/workflows/           # GitHub Actions for CI/CD
+├── .streamlit/                  # Streamlit configuration
+│   └── config.toml              # Streamlit server settings
+├── .git/                        # Git version control
+├── .gitignore                   # Git ignore rules
+├── LICENSE.txt                  # Project license
 └── README.md                    # Project documentation
 ```
 
@@ -181,10 +188,3 @@ python -m pytest app/test_app.py
 4. Add tests for new functionality
 5. Submit a pull request
 
-## License
-
-This project is licensed under the terms specified in the LICENSE file.
-
-## Support
-
-For questions, issues, or contributions, please refer to the project repository or contact the development team.
